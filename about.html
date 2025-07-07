@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" type="image/x-icon" href="frakktur-icon.png">
+  <title>AUREVIA | Rolex</title>
+  <link rel="icon" type="image/x-icon" href="rolex-crown.png">
+<style>
+    a {
+      font-family: 'Outfit', sans-serif;
+      transition: 0.2s;
+    }
+
+    a:hover {
+      color: rgb(199, 188, 28);
+      transition: 0.2s;
+    }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-slide-in {
+      animation: fadeSlideIn 1s ease-out forwards;
+    }
+
+    header {
+    background-color: #22543c !important;
+    }
+
+    header.scrolled {
+    background-color: #22543c !important;
+    }
+
+    header.menu-open {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    header.scrolled a {
+      color: black !important;
+    }
+
+    header.scrolled .text-3xl a:hover {
+      color: green !important;
+    }
+
+    header.scrolled nav a:hover {
+      color: rgb(167, 157, 17) !important;
+    }
+
+    header.scrolled #menu-button svg {
+      color: black !important;
+      stroke: black !important;
+    }
+
+    header {
+      z-index: 9999 !important;
+    }
+
+    .custom-shadow {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 1600px) {
+    .text-xl-1600 {
+        font-size: 1.25rem; /* smaller than xl:text-xl */
+    }
+    .text-2xl-1600 {
+        font-size: 1.5rem; /* smaller than md:text-2xl */
+    }
+    .text-3xl-1600 {
+        font-size: 1.875rem; /* smaller than lg:text-3xl */
+    }
+    .text-5xl-1600 {
+        font-size: 2.25rem; /* smaller than xl:text-5xl */
+    }
+    .text-base-1600 {
+        font-size: 0.875rem; /* smaller than md:text-base */
+    }
+    .text-lg-1600 {
+        font-size: 1.125rem; /* smaller than lg:text-lg */
+    }
+  }
+
+  .custom-size {
+    min-height: 750px;
+  }
+
+  @media (max-width: 500px) {
+    .image-height-custom {
+        height: 400px;
+        margin-bottom: -270px;
+    }
+  }
+
+  @keyframes fadeSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+    .animate-fade-slide-in-left {
+        animation: fadeSlideInLeft 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    .fade-in {
+        opacity: 0;
+    }
+
+    .reveal {
+        animation: fadeIn 2s ease-out forwards;
+    }
+
+    .delay-0 {
+        animation-delay: 0s;
+    }
+    .delay-1 {
+        animation-delay: 0.3s;
+    }
+    .delay-2 {
+        animation-delay: 0.6s;
+    }
+
+    @keyframes fadeRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+    .fade-in-right {
+        opacity: 0;
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-in-right.revealed {
+        animation: fadeRightToLeft 1s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="relative bg-white text-white overflow-x-hidden">
+
+  <!-- Landing Section -->
+<section class="relative w-full overflow-hidden">
+
+  <!-- Content on top -->
+  <div class="relative z-10">
+    <!-- Navigation Bar -->
+    <header role="banner" class="fixed top-0 left-0 right-0 bg-transparent bg-opacity-90 z-30 custom-shadow">
+      <div class="max-w-[1800px] mx-auto flex justify-between items-center px-6 py-4 animate-fade-slide-in">
+        <div class="text-white uppercase tracking-widest text-3xl select-none">
+          <a href="index.html">ROLEX</a>
+        </div>
+
+        <nav role="navigation" aria-label="Primary navigation"
+          class="hidden md:flex space-x-8 font-[inherit] tracking-widest text-lg">
+          <a href="index.html" class="text-white py-1 px-3 rounded-md center">Home</a>
+          <a href="models.html" class="text-white py-1 px-3 rounded-md center">Shop</a>
+          <a href="about.html" class="text-white py-1 px-3 rounded-md center">About</a>
+        </nav>
+
+        <button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu"
+          id="menu-button" class="md:hidden">
+          <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-menu"
+        class="max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out md:hidden bg-opacity-95 backdrop-blur-md border-t border-gray-800">
+        <div class="flex flex-col px-6 py-4 space-y-4 font-[inherit] tracking-widest text-lg">
+          <a href="index.html" class="text-white text-center py-2 px-3 w-full">Home</a>
+          <a href="models.html" class="text-white text-center py-2 px-3 w-full">Shop</a>
+          <a href="about.html" class="text-white text-center py-2 px-3 w-full">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+  </div>
+</section>
+
+<section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('landing-page-about-us.jpg');">
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+    <div class="fade-up">
+      <p class="text-sm md:text-base text-white tracking-widest uppercase animate-fade-slide-in">Behind The Kingdom</p>
+      <h1 class="mt-4 text-4xl md:text-6xl font-bold text-white animate-fade-slide-in">About Us</h1>
+      <button
+        id="scroll-cross"
+        aria-label="Scroll down"
+        class="mt-8 mx-auto flex items-center justify-center text-white cursor-pointer select-none"
+        style="width: 40px; height: 40px;"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+    document.getElementById('scroll-cross').addEventListener('click', () => {
+    const element = document.getElementById('scrolled-section');
+    const y = element.getBoundingClientRect().top + window.pageYOffset - 69;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+</script>
+
+<style>
+  #scroll-cross svg {
+    animation: twitch-vertical 2s infinite alternate ease-in-out;
+    transform-origin: center;
+  }
+
+  @keyframes twitch-vertical {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+  }
+</style>
+
+<section id="scrolled-section" class="w-full h-auto flex flex-col xl:flex-row items-center bg-white">
+  <div class="fade-left-on-scroll w-full xl:w-1/2 px-6 xl:pl-[100px] py-12 xl:py-0 text-center xl:text-left opacity-0">
+    <h2 class="text-xl-1600 md:text-2xl-1600 lg:text-3xl-1600 xl:text-5xl font-bold text-gray-900 mb-4 xl:mb-6">
+      Legacy of Unmatched Craftsmanship
+    </h2>
+    <p class="text-sm md:text-base-1600 lg:text-lg-1600 text-gray-700 max-w-xl mx-auto xl:mx-0 xl:text-lg">
+      Rolex has long stood as a symbol of prestige, performance, and perfection.
+      With a heritage deeply rooted in precision engineering and timeless
+      design, the brand has earned global trust across generations. From
+      pioneering waterproof watches to revolutionizing automatic movements,
+      Rolex continues to define excellence in watchmaking—setting the standard
+      in both durability and distinction.
+    </p>
+  </div>
+
+  <div class="w-full xl:w-1/2 relative">
+    <img
+      src="sustainable-edit.png"
+      alt="Rolex Sustainability"
+      class="hidden xl:block w-full h-auto object-cover"
+    />
+    <img
+      src="sustainable.png"
+      alt="Rolex Sustainability Mobile"
+      class="block xl:hidden w-full h-auto object-cover"
+    />
+  </div>
+</section>
+
+<script>
+  const scrollFadeLeftTrigger = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-slide-in-left');
+          entry.target.classList.remove('opacity-0');
+          scrollFadeLeftTrigger.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  document.querySelectorAll('.fade-left-on-scroll').forEach(el => {
+    scrollFadeLeftTrigger.observe(el);
+  });
+</script>
+
+<section id="icon-section" class="w-full h-[400px] bg-gray-100 flex items-center justify-center text-center px-4">
+  <div class="max-w-6xl w-full flex justify-between items-center gap-8 sm:gap-16 px-4">
+    <div class="fade-in delay-0 flex flex-col items-center space-y-2 max-w-xs">
+      <img src="icons/idea.png" alt="Innovation" class="w-12 h-12 sm:w-16 sm:h-16" />
+      <h3 class="text-lg sm:text-2xl font-semibold text-gray-900">Innovation</h3>
+      <p class="text-xs sm:text-sm text-gray-600 max-w-[180px] mx-auto">
+        Pioneering advancements that redefine watchmaking.
+      </p>
+    </div>
+    <div class="fade-in delay-1 flex flex-col items-center space-y-2 max-w-xs">
+      <img src="icons/quality.png" alt="Quality" class="w-12 h-12 sm:w-16 sm:h-16" />
+      <h3 class="text-lg sm:text-2xl font-semibold text-gray-900">Quality</h3>
+      <p class="text-xs sm:text-sm text-gray-600 max-w-[180px] mx-auto">
+        Uncompromising precision and craftsmanship in every detail.
+      </p>
+    </div>
+    <div class="fade-in delay-2 flex flex-col items-center space-y-2 max-w-xs">
+      <img src="icons/prestige.png" alt="Prestige" class="w-12 h-12 sm:w-16 sm:h-16" />
+      <h3 class="text-lg sm:text-2xl font-semibold text-gray-900">Prestige</h3>
+      <p class="text-xs sm:text-sm text-gray-600 max-w-[180px] mx-auto">
+        A timeless symbol of status and excellence worldwide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const fadeElements = document.querySelectorAll('#icon-section .fade-in');
+
+  const scrollTrigger = new IntersectionObserver((entries, observerInstance) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        observerInstance.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  fadeElements.forEach(el => scrollTrigger.observe(el));
+</script>
+
+<section class="custom-size relative w-full bg-[url('background-section.jpg')] bg-cover bg-center flex items-center justify-center px-6 sm:px-12 py-12 overflow-hidden">
+  <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+  <div class="relative z-1 max-w-[1920px] w-full flex flex-col-reverse [@media(min-width:1500px)]:flex-row items-center justify-center gap-6 [@media(min-width:1500px)]:gap-24">
+    
+    <img
+      src="founder.png"
+      alt="Hans Wilsdorf"
+      class="image-height-custom h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] [@media(min-width:1500px)]:h-[700px] object-contain [@media(min-width:1500px)]:-mb-12 [@media(min-width:1200px)]:-mb-12 [@media(min-width:900px)]:-mb-12 [@media(min-width:700px)]:-mb-12 [@media(min-width:600px)]:-mb-20"
+    />
+
+    <div class="text-white max-w-lg text-center fade-in-right [@media(min-width:1500px)]:text-left [@media(max-width:500px)]:-mt-10 [@media(max-width:500px)]:mb-10">
+        <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold leading-tight text-yellow-300">ROLEX</h1>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Hans Wilsdorf</h1>
+        <p class="mt-5 sm:mt-5 text-lg sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-widest">FOUNDER OF ROLEX</p>
+        <p class="mt-4 sm:mt-6 text-xs sm:text-sm opacity-70">22 March 1881 - 6 July 1980</p>
+        <p class="mt-1 text-xs sm:text-sm opacity-70">Germany</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const wilsdorfTarget = document.querySelector('.fade-in-right');
+
+  const triggerFade = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        triggerFade.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  if (wilsdorfTarget) triggerFade.observe(wilsdorfTarget);
+</script>
+
+<section class="legacy-excellence relative bg-white py-16 overflow-hidden" style="background-image: url('section-about-us.jpg'); background-size: cover; background-position: center;">
+  <div class="absolute inset-0 bg-white bg-opacity-10 z-0"></div>
+
+  <div class="relative w-full px-4 sm:px-8 xl:px-24 z-[1]">
+    <div class="flex justify-center mb-16">
+      <img src="rolex-logo.png" alt="Rolex Logo" class="w-32 sm:w-40 md:w-48" />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-screen-2xl mx-auto">
+      <!-- Card 1 -->
+      <div class="flex flex-col items-center text-black">
+        <img src="watch-circle.png" alt="Innovation" class="w-3/4 object-contain mb-6 border-[4px] rounded-full mb-10 legacy-img" style="border-color: #166534; opacity: 0; transform: translateY(20px);" />
+        <div class="w-full rounded-lg p-6 text-left legacy-text" style="opacity: 0; transform: translateY(20px);">
+          <h3 class="text-xl sm:text-3xl font-bold mb-2">Pushing Boundaries</h3>
+          <div class="w-[50px] h-[5px] bg-[#166534] my-[20px]"></div>
+          <p class="text-xs sm:text-sm md:text-sm lg:text-xs xl:text-xs 2xl:text-sm">
+            Since its inception, Rolex has continuously pushed the boundaries of watchmaking. From inventing the first waterproof Oyster case in 1926 to pioneering the Perpetual rotor self-winding mechanism, the brand’s innovations have redefined precision and reliability in the industry. Rolex’s relentless commitment to innovation ensures every timepiece stands at the forefront of technology and performance.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex flex-col items-center text-black">
+        <img src="rolex-craftmanship.png" alt="Craftsmanship" class="w-3/4 object-contain mb-6 border-[4px] rounded-full mb-10 legacy-img" style="border-color: #166534; opacity: 0; transform: translateY(20px);" />
+        <div class="w-full rounded-lg p-6 text-left legacy-text" style="opacity: 0; transform: translateY(20px);">
+          <h3 class="text-xl sm:text-3xl font-bold mb-2">Engineering & Craftmanship</h3>
+          <div class="w-[50px] h-[5px] bg-[#166534] my-[20px]"></div>
+          <p class="text-xs sm:text-sm md:text-sm lg:text-xs xl:text-xs 2xl:text-sm">
+            Each Rolex watch is a masterpiece of meticulous craftsmanship. From the precision engineering of components to the hand-assembly and exhaustive quality control, the brand leaves no detail unattended. Rolex artisans blend traditional techniques with cutting-edge manufacturing to create watches that not only tell time but also embody artistry and durability for generations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex flex-col items-center text-black">
+        <img src="rolex-business.png" alt="Legacy" class="w-3/4 object-contain mb-6 border-[4px] rounded-full mb-10 legacy-img" style="border-color: #166534; opacity: 0; transform: translateY(20px);" />
+        <div class="w-full rounded-lg p-6 text-left legacy-text" style="opacity: 0; transform: translateY(20px);">
+          <h3 class="text-xl sm:text-3xl font-bold mb-2">Legacy</h3>
+          <div class="w-[50px] h-[5px] bg-[#166534] my-[20px]"></div>
+          <p class="text-xs sm:text-sm md:text-sm lg:text-xs xl:text-xs 2xl:text-sm">
+            Rolex’s heritage is woven into the fabric of exploration, sport, and culture worldwide. Trusted by pioneers scaling Everest and athletes conquering the oceans, the brand symbolizes prestige, resilience, and excellence. The legacy of Rolex transcends time, making every watch a treasured heirloom that connects past achievements with future aspirations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .legacy-excellence img {
+        transition: 0.3s;
+    }
+
+    .legacy-excellence img:hover {
+      transition: transform 0.3s ease;
+      transform-origin: center;
+    }
+
+    .legacy-excellence img:hover {
+      transform: scale(1.03);
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const section = document.querySelector('.legacy-excellence');
+      const images = section.querySelectorAll('.legacy-img');
+      const texts = section.querySelectorAll('.legacy-text');
+
+      function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.bottom >= 0
+        );
+      }
+
+      let animated = false;
+
+      function animateOnScroll() {
+        if (animated) return;
+        if (isInViewport(section)) {
+          animated = true;
+
+          images.forEach(img => {
+            img.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            img.classList.add('fade-in');
+          });
+
+          setTimeout(() => {
+            texts.forEach(text => {
+              text.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+              text.classList.add('fade-in');
+            });
+          }, 200);
+        }
+      }
+
+      window.addEventListener('scroll', animateOnScroll);
+      animateOnScroll();
+    });
+  </script>
+</section>
+
+  <section class="w-full bg-gray-100 h-[100px] flex justify-center items-center">
+    <div class="flex gap-10">
+      <img src="icons/threads.png" alt="Instagram Threads" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/facebook.png" alt="Facebook" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/instagram.png" alt="Instagram" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/twitter.png" alt="X Twitter" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/linkedin.png" alt="LinkedIn" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+    </div>
+  </section>
+
+<footer class="bg-gray-900 text-white py-16 font-sans">
+  <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-sm">
+
+    <div class="flex items-center space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0v20m0-10h10m-10 0H2" />
+      </svg>
+      <span class="font-semibold text-base">Languages</span>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-base mb-4">Collections</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:underline">Submariner</a></li>
+        <li><a href="#" class="hover:underline">Daytona</a></li>
+        <li><a href="#" class="hover:underline">Datejust</a></li>
+        <li><a href="#" class="hover:underline">GMT-Master</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-base mb-4">Customer Service</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:underline">Order Tracking</a></li>
+        <li><a href="#" class="hover:underline">Warranty & Repairs</a></li>
+        <li><a href="#" class="hover:underline">Authenticity Guarantee</a></li>
+        <li><a href="#" class="hover:underline">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-base mb-4">About Rolex</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:underline">Our Heritage</a></li>
+        <li><a href="#" class="hover:underline">Innovation</a></li>
+        <li><a href="#" class="hover:underline">Sustainability</a></li>
+        <li><a href="#" class="hover:underline">Careers</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="mt-16 h-[70px] flex flex-col items-center justify-center text-center text-xs text-gray-400 px-4">
+    <p>© 2025, Rolex | All Rights Reserved.</p>
+    <p class="mt-1">Operated by <a href="https://www.instagram.com/denysovski/" target="_blank" class="underline">Denysovski</a></p>
+  </div>
+</footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+      const header = document.querySelector('header');
+      menuButton.setAttribute('aria-expanded', !expanded);
+
+      if (expanded) {
+        mobileMenu.classList.remove('max-h-[500px]', 'opacity-100');
+        mobileMenu.classList.add('max-h-0', 'opacity-0');
+        header.classList.remove('menu-open');
+      } else {
+        mobileMenu.classList.remove('max-h-0', 'opacity-0');
+        mobileMenu.classList.add('max-h-[500px]', 'opacity-100');
+        header.classList.add('menu-open');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu.classList.remove('max-h-[500px]', 'opacity-100');
+        mobileMenu.classList.add('max-h-0', 'opacity-0');
+        menuButton.setAttribute('aria-expanded', false);
+      }
+    });
+
+      const cardsGrid = document.getElementById('cards-grid');
+      let animated = false;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            cardsGrid.classList.add('animate-fade-slide-in');
+            animated = true;
+            obs.unobserve(cardsGrid);
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+
+      observer.observe(cardsGrid);
+  </script>
+
+</body>
+
+</html>

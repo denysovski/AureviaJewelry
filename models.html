@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" type="image/x-icon" href="frakktur-icon.png">
+  <title>AUREVIA | Rolex</title>
+  <link rel="icon" type="image/x-icon" href="rolex-crown.png">
+<style>
+    a {
+      font-family: 'Outfit', sans-serif;
+      transition: 0.2s;
+    }
+
+    a:hover {
+      color: rgb(199, 188, 28);
+      transition: 0.2s;
+    }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-slide-in {
+      animation: fadeSlideIn 1s ease-out forwards;
+    }
+
+    header {
+    background-color: #22543c !important;
+    }
+
+    header.scrolled {
+    background-color: #22543c !important;
+    }
+
+    header.menu-open {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    header.scrolled a {
+      color: black !important;
+    }
+
+    header.scrolled .text-3xl a:hover {
+      color: green !important;
+    }
+
+    header.scrolled nav a:hover {
+      color: rgb(167, 157, 17) !important;
+    }
+
+    @keyframes fadeBrightness {
+      0% {
+        filter: brightness(0%);
+      }
+      100% {
+        filter: brightness(90%);
+      }
+    }
+
+    .video-fade-in {
+      animation: fadeBrightness 1s ease-out forwards;
+    }
+
+    header.scrolled #menu-button svg {
+      color: black !important;
+      stroke: black !important;
+    }
+
+    header {
+      z-index: 9999 !important;
+    }
+
+    .fade-up, .fade-right {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .fade-right {
+      transform: translateX(40px);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .custom-shadow {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in-up {
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .delay-0 {
+        animation-delay: 0s;
+    }
+
+    .delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    .delay-600 {
+        animation-delay: 0.6s;
+    }
+  </style>
+</head>
+
+<body class="relative bg-black text-white overflow-x-hidden">
+
+  <!-- Landing Section -->
+<section class="relative w-full overflow-hidden">
+
+  <!-- Content on top -->
+  <div class="relative z-10">
+    <!-- Navigation Bar -->
+    <header role="banner" class="fixed top-0 left-0 right-0 bg-transparent bg-opacity-90 z-30 custom-shadow">
+      <div class="max-w-[1800px] mx-auto flex justify-between items-center px-6 py-4 animate-fade-slide-in">
+        <div class="text-white uppercase tracking-widest text-3xl select-none">
+          <a href="index.html">ROLEX</a>
+        </div>
+
+        <nav role="navigation" aria-label="Primary navigation"
+          class="hidden md:flex space-x-8 font-[inherit] tracking-widest text-lg">
+          <a href="index.html" class="text-white py-1 px-3 rounded-md center">Home</a>
+          <a href="models.html" class="text-white py-1 px-3 rounded-md center">Shop</a>
+          <a href="about.html" class="text-white py-1 px-3 rounded-md center">About</a>
+        </nav>
+
+        <button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu"
+          id="menu-button" class="md:hidden">
+          <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-menu"
+        class="max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out md:hidden bg-opacity-95 backdrop-blur-md border-t border-gray-800">
+        <div class="flex flex-col px-6 py-4 space-y-4 font-[inherit] tracking-widest text-lg">
+          <a href="index.html" class="text-white text-center py-2 px-3 w-full">Home</a>
+          <a href="models.html" class="text-white text-center py-2 px-3 w-full">Shop</a>
+          <a href="about.html" class="text-white text-center py-2 px-3 w-full">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+  </div>
+</section>
+
+    <section class="bg-white text-black py-35 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h3 class="text-xl tracking-widest uppercase text-gray-500 mb-4 fade-in-up delay-0">
+                ROLEX WATCHES
+            </h3>
+            <h1 class="text-5xl md:text-8xl font-bold tracking-tight fade-in-up delay-200">
+                All Models
+            </h1>
+        </div>
+        <div class="mt-8">
+            <button
+                class="mx-auto block w-[150px] h-[40px] bg-[#166534] rounded-full text-white text-lg flex items-center justify-center gap-2 cursor-pointer transition-colors duration-300 hover:bg-[#14532d] fade-in-up delay-0"
+            >
+                <img src="icons/filter.png" alt="Filters Icon" class="w-5 h-5" />
+                Filters
+            </button>
+        </div>
+    </section>
+
+<section class="w-full flex justify-center bg-white pb-50">
+  <div class="w-[80%]">
+  <div class="flex items-center mb-6">
+    <img src="heart.png" alt="Heart" class="w-4 h-4 mr-2" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+    <a href="#" id="favourites-link" class="text-sm uppercase tracking-widest text-green-700 hover:underline mr-4">Favourites</a>
+    <div class="flex-grow h-px bg-gray-300"></div>
+  </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-up delay-400">
+      <!-- CARD 1 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Sky-Dweller</p>
+          <p class="text-sm text-gray-700">Oyster, 42mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 15,300</p>
+        </div>
+        <img src="oyster1.png" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Explorer II</p>
+          <p class="text-sm text-gray-700">Oyster, 40mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 8,900</p>
+        </div>
+        <img src="oyster2.webp" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Submariner Date</p>
+          <p class="text-sm text-gray-700">Oyster, 41mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 10,200</p>
+        </div>
+        <img src="oyster3.webp" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">GMT-Master II</p>
+          <p class="text-sm text-gray-700">Oyster, 40mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 12,000</p>
+        </div>
+        <img src="oyster4.webp" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Day-Date</p>
+          <p class="text-sm text-gray-700">President, 36mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 30,500</p>
+        </div>
+        <img src="oyster5.png" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Yacht-Master</p>
+          <p class="text-sm text-gray-700">Oysterflex, 42mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 26,200</p>
+        </div>
+        <img src="oyster6.png" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Sea-Dweller</p>
+          <p class="text-sm text-gray-700">Oystersteel, 43mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 13,100</p>
+        </div>
+        <img src="oyster7.png" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Milgauss</p>
+          <p class="text-sm text-gray-700">Oyster, 40mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 7,700</p>
+        </div>
+        <img src="oyster8.png" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="watch-card bg-[#f9fafb] h-[320px] shadow-md relative flex justify-between items-end p-4 overflow-hidden cursor-pointer">
+        <img src="heart.png" class="favorite-heart absolute top-[15px] left-[15px] h-[30px] w-auto cursor-pointer" style="filter: invert(32%) sepia(86%) saturate(1141%) hue-rotate(87deg) brightness(90%) contrast(95%);" />
+        <div class="absolute bottom-4 left-4">
+          <p class="text-black font-semibold text-lg">Air-King</p>
+          <p class="text-sm text-gray-700">Oystersteel, 40mm</p>
+          <p class="text-sm text-gray-800 font-medium mt-1">€ 6,400</p>
+        </div>
+        <img src="oyster9.png" class="h-[120%] object-contain absolute right-4 -bottom-10 hover:scale-105 transition-transform duration-500" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Utility to get cookie by name
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  // Utility to set cookie (expires in 365 days)
+  function setCookie(name, value) {
+    const d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    document.cookie = `${name}=${value};path=/;expires=${d.toUTCString()}`;
+  }
+
+  const favLink = document.getElementById('favourites-link');
+  const hearts = document.querySelectorAll('.favorite-heart');
+  const cards = document.querySelectorAll('.watch-card');
+
+  // Parse favorites from cookie or empty array
+  let favourites = [];
+  const favCookie = getCookie('favourites');
+  if (favCookie) {
+    try {
+      favourites = JSON.parse(favCookie);
+    } catch {
+      favourites = [];
+    }
+  }
+
+  // Assign unique IDs to cards manually here (same order as your cards)
+  const cardIds = [
+    "sky-dweller", "explorer-ii", "submariner-date", "gmt-master-ii", 
+    "day-date", "yacht-master", "sea-dweller", "milgauss", "air-king"
+  ];
+
+  cards.forEach((card, i) => {
+    card.dataset.id = cardIds[i];
+  });
+
+  function updateHearts() {
+    hearts.forEach(heart => {
+      const card = heart.closest('.watch-card');
+      const id = card.dataset.id;
+      if (favourites.includes(id)) {
+        heart.src = 'heart-filled.png';
+      } else {
+        heart.src = 'heart.png';
+      }
+    });
+  }
+
+  // Toggle favourite status for a given card ID
+  function toggleFavourite(id) {
+    if (favourites.includes(id)) {
+      favourites = favourites.filter(favId => favId !== id);
+    } else {
+      favourites.push(id);
+    }
+    setCookie('favourites', JSON.stringify(favourites));
+    updateHearts();
+  }
+
+  // When heart clicked: toggle favourite
+  hearts.forEach(heart => {
+    heart.addEventListener('click', e => {
+      e.stopPropagation();
+      const card = heart.closest('.watch-card');
+      const id = card.dataset.id;
+      toggleFavourite(id);
+      if (favLink.classList.contains('active')) {
+        showFavourites();
+      }
+    });
+  });
+
+  // When card clicked: toggle favourite too
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.dataset.id;
+      toggleFavourite(id);
+      if (favLink.classList.contains('active')) {
+        showFavourites();
+      }
+    });
+  });
+
+  // Show only favourites
+  function showFavourites() {
+    cards.forEach(card => {
+      card.style.display = favourites.includes(card.dataset.id) ? '' : 'none';
+    });
+  }
+
+  // Show all cards
+  function showAll() {
+    cards.forEach(card => {
+      card.style.display = '';
+    });
+  }
+
+  // Toggle favourites view on clicking "Favourites" link
+  favLink.addEventListener('click', e => {
+    e.preventDefault();
+    favLink.classList.toggle('active');
+    if (favLink.classList.contains('active')) {
+      showFavourites();
+      favLink.style.backgroundColor = '#166534';
+      favLink.style.color = 'white';
+      favLink.style.borderRadius = '6px';
+      favLink.style.padding = '3px 8px';
+      favLink.style.textDecoration = 'none';
+    } else {
+      showAll();
+      favLink.style = null;
+      favLink.className = 'text-sm uppercase tracking-widest text-green-700 hover:underline mr-4';
+      updateHearts();
+    }
+  });
+</script>
+
+  <section class="w-full bg-gray-100 h-[100px] flex justify-center items-center">
+    <div class="flex gap-10">
+      <img src="icons/threads.png" alt="Instagram Threads" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/facebook.png" alt="Facebook" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/instagram.png" alt="Instagram" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/twitter.png" alt="X Twitter" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+      <img src="icons/linkedin.png" alt="LinkedIn" class="w-8 h-8 cursor-pointer" style="filter: invert(22%) sepia(95%) saturate(5965%) hue-rotate(113deg) brightness(91%) contrast(96%);" />
+    </div>
+  </section>
+
+<footer class="bg-gray-900 text-white py-16 font-sans">
+  <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-sm">
+
+    <div class="flex items-center space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0v20m0-10h10m-10 0H2" />
+      </svg>
+      <span class="font-semibold text-base">Languages</span>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-base mb-4">Collections</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:underline">Submariner</a></li>
+        <li><a href="#" class="hover:underline">Daytona</a></li>
+        <li><a href="#" class="hover:underline">Datejust</a></li>
+        <li><a href="#" class="hover:underline">GMT-Master</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-base mb-4">Customer Service</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:underline">Order Tracking</a></li>
+        <li><a href="#" class="hover:underline">Warranty & Repairs</a></li>
+        <li><a href="#" class="hover:underline">Authenticity Guarantee</a></li>
+        <li><a href="#" class="hover:underline">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-base mb-4">About Rolex</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:underline">Our Heritage</a></li>
+        <li><a href="#" class="hover:underline">Innovation</a></li>
+        <li><a href="#" class="hover:underline">Sustainability</a></li>
+        <li><a href="#" class="hover:underline">Careers</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="mt-16 h-[70px] flex flex-col items-center justify-center text-center text-xs text-gray-400 px-4">
+    <p>© 2025, Rolex | All Rights Reserved.</p>
+    <p class="mt-1">Operated by <a href="https://www.instagram.com/denysovski/" target="_blank" class="underline">Denysovski</a></p>
+  </div>
+</footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+      const header = document.querySelector('header');
+      menuButton.setAttribute('aria-expanded', !expanded);
+
+      if (expanded) {
+        mobileMenu.classList.remove('max-h-[500px]', 'opacity-100');
+        mobileMenu.classList.add('max-h-0', 'opacity-0');
+        header.classList.remove('menu-open');
+      } else {
+        mobileMenu.classList.remove('max-h-0', 'opacity-0');
+        mobileMenu.classList.add('max-h-[500px]', 'opacity-100');
+        header.classList.add('menu-open');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu.classList.remove('max-h-[500px]', 'opacity-100');
+        mobileMenu.classList.add('max-h-0', 'opacity-0');
+        menuButton.setAttribute('aria-expanded', false);
+      }
+    });
+
+      const cardsGrid = document.getElementById('cards-grid');
+      let animated = false;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            cardsGrid.classList.add('animate-fade-slide-in');
+            animated = true;
+            obs.unobserve(cardsGrid);
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+
+      observer.observe(cardsGrid);
+
+      const animObserver = new IntersectionObserver((observedItems, animObs) => {
+      observedItems.forEach(item => {
+        if (item.isIntersecting) {
+          item.target.classList.add('reveal');
+          animObs.unobserve(item.target);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    const animatedElements = document.querySelectorAll('.fade-up, .fade-right');
+    animatedElements.forEach(el => animObserver.observe(el));
+
+    document.getElementById('scroll-down').addEventListener('click', () => {
+      const nextSection = document.querySelector('section:nth-of-type(2)');
+      const offset = 50;
+
+      const y = nextSection.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0');
+          entry.target.classList.remove('translate-x-[-20px]');
+          entry.target.classList.remove('translate-y-[50px]');
+          entry.target.classList.add('opacity-100', 'translate-x-0', 'translate-y-0');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal-left, .reveal-bottom').forEach(el => {
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+
+</html>
